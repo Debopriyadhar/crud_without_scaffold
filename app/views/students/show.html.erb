@@ -1,0 +1,16 @@
+<h2>Name: <%= @student.name %></h2>
+<h2>Email-id: <%= @student.email %></h2>
+<h2>Phone no: <%= @student.phone_no %></h2>
+<h2>Address: <%= @student.address %></h2>
+<h2>Guardian Name: <%= @student.guardian_name %></h2>
+<h2>Madhyamik Marks <%= @student.madhyamik_percentage %></h2>
+<h2>HS Marks: <%= @student.hs_percentage %></h2>
+
+<ul>
+  <li><%= link_to "Edit", edit_student_path(@student.id) %></li>
+  <li><%= link_to "Destroy", student_path(@student.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+

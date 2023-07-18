@@ -1,0 +1,15 @@
+<h1>Students Registration</h1>
+<%# <%= image_tag "home.jpg", height:500 %> 
+<ul>
+  <% @students.each do |s| %>  
+    <li>
+      <%= link_to s.name, student_path(s.id) %> <br>
+      <%= link_to "Edit user", edit_student_path(s.id) %>
+      <%= link_to "Destroy", student_path(s.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Student", new_student_path %>
